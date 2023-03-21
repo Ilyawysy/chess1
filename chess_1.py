@@ -450,17 +450,17 @@ def game(player_turn, dict_changes):
                 if start == 'd':
                     while start == 'd':
                         valid_move(changes[counter][0], another_player_turn)
-                        print(changes)
+                        # print(changes)
                         # print(dict_changes)
                         dict_field[changes[counter][1][0]] = changes[counter][1][1]
                         dict_field[changes[counter][2][0]] = changes[counter][2][1]
-                        print(counter)
+                        # print(counter)
                         counter += 1
                         another_player_turn += 1
                         print(print_board())
                         start = input()
                 if start == 'a':
-                    print(counter)
+                    # print(counter)
                     counter -= 1
                     while start == 'a':
                         dict_field[changes[counter][1][0]] = changes[counter][2][1]
@@ -472,7 +472,7 @@ def game(player_turn, dict_changes):
                 if start == '':
                     game(another_player_turn, dict_changes)
         if valid_move(move, player_turn):
-            print(dict_changes)
+            # print(dict_changes)
             if check(player_turn):
                 while check(player_turn):
                     dict_field[list(dict_changes.keys())[0]] = '.'
@@ -490,7 +490,7 @@ def game(player_turn, dict_changes):
                 dict_field[list(dict_changes.keys())[0]] = '.'
                 dict_field[list(dict_changes.keys())[1]] = dict_changes[list(dict_changes.keys())[1]]
             else:
-                print(dict_changes)
+                # print(dict_changes)
                 dict_field[list(dict_changes)[0]] = '.'
                 dict_field[list(dict_changes)[1]] = dict_changes[list(dict_changes)[1]]
                 if check(player_turn):
@@ -514,7 +514,7 @@ def game(player_turn, dict_changes):
             player_turn -= 1
         turns += 1
         player_turn += 1
-        print(dict_changes)
+        # print(dict_changes)
         dict_changes.clear()
         print(print_board())
         print(f'|{turns // 2}__Pаунд__{turns // 2}|')
