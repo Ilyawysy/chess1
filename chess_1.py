@@ -1,16 +1,19 @@
+from typing import Dict, Any
+
 dict_field = {'a8': 'r', 'b8': 'n', 'c8': 'b', 'd8': 'q', 'e8': 'k', 'f8': 'b', 'g8': 'n', 'h8': 'r',
-              'a7': '.', 'b7': 'p', 'c7': 'p', 'd7': 'p', 'e7': 'p', 'f7': 'p', 'g7': 'p', 'h7': 'p',
+              'a7': 'p', 'b7': 'p', 'c7': 'p', 'd7': 'p', 'e7': 'p', 'f7': 'p', 'g7': 'p', 'h7': 'p',
               'a6': '.', 'b6': '.', 'c6': '.', 'd6': '.', 'e6': '.', 'f6': '.', 'g6': '.', 'h6': '.',
               'a5': '.', 'b5': '.', 'c5': '.', 'd5': '.', 'e5': '.', 'f5': '.', 'g5': '.', 'h5': '.',
               'a4': '.', 'b4': '.', 'c4': '.', 'd4': '.', 'e4': '.', 'f4': '.', 'g4': '.', 'h4': '.',
-              'a3': 'K', 'b3': '.', 'c3': '.', 'd3': '.', 'e3': '.', 'f3': '.', 'g3': '.', 'h3': '.',
+              'a3': '.', 'b3': '.', 'c3': '.', 'd3': '.', 'e3': '.', 'f3': '.', 'g3': '.', 'h3': '.',
               'a2': 'P', 'b2': 'P', 'c2': 'P', 'd2': 'P', 'e2': 'P', 'f2': 'P', 'g2': 'P', 'h2': 'P',
-              'a1': 'R', 'b1': '.', 'c1': 'B', 'd1': 'Q', 'e1': '.', 'f1': 'B', 'g1': 'N', 'h1': 'R'}
+              'a1': 'R', 'b1': 'N', 'c1': 'B', 'd1': 'Q', 'e1': 'K', 'f1': 'B', 'g1': 'N', 'h1': 'R'}
 
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'boo']
 dict_changes = {}
 player_turn = 0
-
+list_of_moves = []
+print(f'     Игра началась!\n     |1__Pаунд__1|\n')
 
 def print_board():
     print('    A B C D E F G H' + '\n')
@@ -29,11 +32,15 @@ def print_board():
     return '\n    A B C D E F G H\n'
 
 
-print('Игровое поле:')
+print(f'_И Г Р О В О Е  П О Л Е_\n')
 print(print_board())
 
 
 def valid_move(move, player_turn=0, test=0):
+    if test == 0:
+        dict_changes.clear()
+    if len(move) < 2:
+        return False
     for key, value in dict_field.items():
         if key == move:  # проверка на базовые ходы пешки
             if dict_field[move[0] + (str(int(move[1]) - 2) if player_turn % 2 == 0 else str(int(move[1]) + 2))] == (
@@ -74,16 +81,15 @@ def valid_move(move, player_turn=0, test=0):
                 else:
                     return True
     if move[0] == ('N' if player_turn % 2 == 0 else 'n'):
-        print(move)
         if move[-2] in 'abcdefgh' and move[-1] in '12345678':  # обычный ход конём
             for knight in [letters[(letters.index(move[-2]) + 1) if letters.index(move[-2]) + 1 <= 7 else 8] + str(int(move[-1]) + 2),
                            letters[(letters.index(move[-2]) + 2) if letters.index(move[-2]) + 2 <= 7 else 8] + str(int(move[-1]) + 1),
                            letters[(letters.index(move[-2]) + 2) if letters.index(move[-2]) + 2 <= 7 else 8] + str(int(move[-1]) - 1),
                            letters[(letters.index(move[-2]) + 1) if letters.index(move[-2]) + 1 <= 7 else 8] + str(int(move[-1]) - 2),
-                           letters[(letters.index(move[-2]) - 1) if letters.index(move[-2]) + 1 <= 7 else 8] + str(int(move[-1]) - 2),
-                           letters[(letters.index(move[-2]) - 2) if letters.index(move[-2]) + 2 <= 7 else 8] + str(int(move[-1]) - 1),
-                           letters[(letters.index(move[-2]) - 2) if letters.index(move[-2]) + 2 <= 7 else 8] + str(int(move[-1]) + 1),
-                           letters[(letters.index(move[-2]) - 1) if letters.index(move[-2]) + 1 <= 7 else 8] + str(int(move[-1]) + 2)]:
+                           letters[(letters.index(move[-2]) - 1) if letters.index(move[-2]) - 1 <= 7 else 8] + str(int(move[-1]) - 2),
+                           letters[(letters.index(move[-2]) - 2) if letters.index(move[-2]) - 2 <= 7 else 8] + str(int(move[-1]) - 1),
+                           letters[(letters.index(move[-2]) - 2) if letters.index(move[-2]) - 2 <= 7 else 8] + str(int(move[-1]) + 1),
+                           letters[(letters.index(move[-2]) - 1) if letters.index(move[-2]) - 1 <= 7 else 8] + str(int(move[-1]) + 2)]:
                 if knight in dict_field.keys() and dict_field[knight] == ('N' if player_turn % 2 == 0 else 'n') and \
                         (len(move) == 3 and 'x' not in move and dict_field[move[-2:]] == '.' or
                          len(move) == 4 and 'x' in move and dict_field[move[2:]] in (
@@ -139,7 +145,7 @@ def valid_move(move, player_turn=0, test=0):
                         if dict_field[one_move] == ('B' if player_turn % 2 == 0 else 'b') and 'x' in move and \
                                 dict_field[move[-2:]] != '.':
                             if test == 0:
-                                print(1)
+
                                 dict_changes[one_move] = '.'
                                 dict_changes[move[-2:]] = ('B' if player_turn % 2 == 0 else 'b')
                                 return True
@@ -148,7 +154,7 @@ def valid_move(move, player_turn=0, test=0):
                         elif dict_field[one_move] == ('B' if player_turn % 2 == 0 else 'b') and 'x' not in move and \
                                 dict_field[
                                     move[-2:]] == '.':
-                            print(2)
+                            # print(2)
                             if test == 0:  # если ход на одну клетку в любую сторону
                                 dict_changes[one_move] = '.'
                                 dict_changes[move[-2:]] = ('B' if player_turn % 2 == 0 else 'b')
@@ -191,7 +197,6 @@ def valid_move(move, player_turn=0, test=0):
                                                 continue
                                             else:
                                                 return False
-                            print(3)
                             if test == 0:
                                 dict_changes[possible_bishops[my_bishop]] = '.'
                                 dict_changes[move[-2:]] = ('B' if player_turn % 2 == 0 else 'b')
@@ -216,8 +221,6 @@ def valid_move(move, player_turn=0, test=0):
                         possible_rooks.append(rook)
                     else:
                         possible_rooks.append(0)
-            # print(possible_rooks)
-
             for check_num_of_rooks in range(len(possible_rooks)):
                 if possible_rooks[check_num_of_rooks] != 0:
                     if dict_field[possible_rooks[check_num_of_rooks]] == ('R' if player_turn % 2 == 0 else 'r'):
@@ -357,7 +360,7 @@ def valid_move(move, player_turn=0, test=0):
                             else:
                                 return True
     if move[0] == ('K' if player_turn % 2 == 0 else 'k'):
-        if (len(move) == 3 and 'x' not in move and dict_field[move[-2:]] == '.' or len(move) == 4 and move[1] == 'x' and
+        if (len(move) == 3 and move[1] in 'abcdefgh' and move[2] in '12345678' and 'x' not in move and dict_field[move[-2:]] == '.' or len(move) == 4 and move[1] == 'x' and
             dict_field[move[-2:]] in ('prnbqk' if player_turn % 2 == 0 else 'PRNBQK')) and \
                 move[-2] in 'abcdefgh' and move[-1] in '12345678' and move[-2:] in dict_field.keys():
             if letters[letters.index(move[-2]) - 1] + str(int(move[-1]) + 1) and letters[
@@ -366,7 +369,6 @@ def valid_move(move, player_turn=0, test=0):
                 'p' if player_turn % 2 == 0 else 'P') \
                         or dict_field[letters[letters.index(move[-2]) + 1] + str(int(move[-1]) + 1)] == (
                 'p' if player_turn % 2 == 0 else 'P'):
-                    # print('nope')
                     return False
             for one_move in [letters[letters.index(move[-2]) + 1 if letters.index(move[-2]) + 1 <= 7 else 8] + move[-1],
                              letters[letters.index(move[-2]) - 1 if letters.index(move[-2]) - 1 >= 0 else 8] + move[-1],
@@ -380,23 +382,10 @@ def valid_move(move, player_turn=0, test=0):
                                  int(move[-1]) + 1),
                              letters[letters.index(move[-2]) - 1 if letters.index(move[-2]) - 1 >= 0 else 8] + str(
                                  int(move[-1]) - 1)]:
-                # print(one_move)
                 if one_move in dict_field.keys():
                     if dict_field[one_move] == ('K' if player_turn % 2 == 0 else 'k'):
-                        # for key, val in dict_field.items():
-                        #     if val in ('rnbqk' if player_turn % 2 == 0 else 'RNBQK'):
-                        #         dict_field[move[-2:]] = ('K' if player_turn % 2 == 0 else 'k')
-                        #         if valid_move(val + 'x' + move[-2:], 1 if val in 'rnbqk' else 0, 1):
-                        #             print('done here', val + 'x' + move[-2:], 1 if val in 'rnbqk' else 0)
-                        #             return False
-                        #         else:
-                        #             dict_field[move[-2:]] = '.'
-                        #             print('done here no', val + 'x' + move[-2:], 1 if val in 'rnbqk' else 0)
-                        #             continue
-
                         dict_changes[one_move] = '.'
                         dict_changes[move[-2:]] = ('K' if player_turn % 2 == 0 else 'k')
-                        print(dict_changes, 111)
                         return True
     return False
 
@@ -404,67 +393,96 @@ def valid_move(move, player_turn=0, test=0):
 def check(player_turn):
     for key1, val1 in dict_field.items():
         if val1 == ('K' if player_turn % 2 == 0 else 'k'):
-            print(key1, val1, 'its key and val')
             for key2, val2 in dict_field.items():
                 if val2 in ('rnbqk' if player_turn % 2 == 0 else 'RNBQK'):
-                    print(val2 + 'x' + key1, 1 if val2 in 'rnbqk' else 0, 1)
                     if valid_move(val2 + 'x' + key1, 1 if val2 in 'rnbqk' else 0, 1):
-                        print(val2 + 'x' + key1, 1 if val2 in 'rnbqk' else 0, 'false move')
+                        return True
+                    elif valid_move(key2[0] + 'x' + key1, 1 if val2 in 'rnbqk' else 0, 1):
                         return True
                     else:
-                        print(val2 + 'x' + key1, 1 if val2 in 'rnbqk' else 0, 'all good')
                         continue
+
     return False
 
 
-def mate(player_turn):
-    for key1, val1 in dict_field.items():
-        if val1 == '.':
-            for key2, val2 in dict_field.items():
-                if val2 in ('prnbqk' if player_turn % 2 == 1 else 'PRNBQK'):
-                    if valid_move(val2 + key1, player_turn, 1):
-                        dict_field[key1] = val2
-                        dict_field[key2] = '.'
-                        if check(player_turn):
-                            dict_field[key1] = '.'
-                            dict_field[key2] = val2
-                            continue
-                        else:
-                            return False
-        elif val1 in ('prnbqk' if player_turn % 2 == 0 else 'PRNBQK'):
-            for key2, val2 in dict_field.items():
-                if val2 in ('prnbqk' if player_turn % 2 == 1 else 'PRNBQK'):
-                    if valid_move(val2 + 'x' + key1, player_turn, 1):
-                        print(val2 + 'x' + key1)
-                        dict_field[key1] = val2
-                        dict_field[key2] = '.'
-                        if check(player_turn):
-                            dict_field[key1] = '.'
-                            dict_field[key2] = val2
-                            continue
-                        else:
-                            return False
-    return True
 def game(player_turn, dict_changes):
+    turns = 2
     while True:
         move = (input('ход первого игрока: ') if player_turn % 2 == 0 else input('ход второго игрока: '))
+        if move == 'moves':
+            continue
+        if move == 'save game':
+            file = input('file name - ')
+            f = open(file, 'w')
+            f.writelines("%s\n" % line for line in list_of_moves)
+            f.close()
+            continue
+        if move == 'play game':
+            changes = []
+            file = input('file name - ')
+            f = open(file, 'r')
+            print(print_board())
+            lines = [line.rstrip() for line in f]
+            another_player_turn = 0
+            start = input('press "d" for move forward.\npress "a" for move back.\npress enter to start playing.\n')
+            aq = []
+            for move_el in lines:
+                changes.append([move_el])
+                # print(move_el, another_player_turn)
+                valid_move(move_el, another_player_turn)
+                # print(dict_changes)
+                # print(f'{list(dict_changes)} = {list(dict_changes.values())}')
+                dict_field[list(dict_changes)[0]] = list(dict_changes.values())[0]
+                dict_field[list(dict_changes)[1]] = list(dict_changes.values())[1]
+                aq.append({list(dict_changes)[0]: list(dict_changes.items())[1][1]})
+                aq.append({list(dict_changes)[1]: list(dict_changes.items())[0][1]})
+                # print(dict_changes)
+                changes[-1].append(list(dict_changes.items())[-1])
+                changes[-1].append(list(dict_changes.items())[-2])
+                another_player_turn += 1
+            # print(aq)
+            # print(list(aq[0].items())[0][1])
+            for num in range(len(aq)):
+                dict_field[list(aq[num].items())[0][0]] = list(aq[num].items())[0][1]
+            another_player_turn = 0
+            counter = 0
+            while True:
+                if start == 'd':
+                    while start == 'd':
+                        valid_move(changes[counter][0], another_player_turn)
+                        print(changes)
+                        # print(dict_changes)
+                        dict_field[changes[counter][1][0]] = changes[counter][1][1]
+                        dict_field[changes[counter][2][0]] = changes[counter][2][1]
+                        print(counter)
+                        counter += 1
+                        another_player_turn += 1
+                        print(print_board())
+                        start = input()
+                if start == 'a':
+                    print(counter)
+                    counter -= 1
+                    while start == 'a':
+                        dict_field[changes[counter][1][0]] = changes[counter][2][1]
+                        dict_field[changes[counter][2][0]] = changes[counter][1][1]
+                        counter -= 1
+                        player_turn -= 1
+                        print(print_board())
+                        start = input()
+                if start == '':
+                    game(another_player_turn, dict_changes)
         if valid_move(move, player_turn):
-            print('its valid')
+            print(dict_changes)
             if check(player_turn):
-                if mate(player_turn):
-                    return 'game over'
                 while check(player_turn):
-                    print('going')
                     dict_field[list(dict_changes.keys())[0]] = '.'
                     dict_field[list(dict_changes.keys())[1]] = dict_changes[list(dict_changes.keys())[1]]
                     if check(player_turn):
-                        if mate(player_turn):
-                            return 'game over'
                         dict_field[list(dict_changes.keys())[0]] = dict_changes[list(dict_changes.keys())[1]]
                         dict_field[list(dict_changes.keys())[1]] = '.'
                         print('move is not valid, its check_mate!')
                         print(print_board())
-                        move = (input('ход первого игрокаa: ') if player_turn % 2 == 0 else input('ход второго игрока: '))
+                        move = (input('ход первого игрокa: ') if player_turn % 2 == 0 else input('ход второго игрока: '))
                         dict_changes.clear()
                         valid_move(move, player_turn)
                     else:
@@ -472,34 +490,34 @@ def game(player_turn, dict_changes):
                 dict_field[list(dict_changes.keys())[0]] = '.'
                 dict_field[list(dict_changes.keys())[1]] = dict_changes[list(dict_changes.keys())[1]]
             else:
-                dict_field[list(dict_changes.keys())[0]] = '.'
-                dict_field[list(dict_changes.keys())[1]] = dict_changes[list(dict_changes.keys())[1]]
+                print(dict_changes)
+                dict_field[list(dict_changes)[0]] = '.'
+                dict_field[list(dict_changes)[1]] = dict_changes[list(dict_changes)[1]]
                 if check(player_turn):
                     while check(player_turn):
-                        if mate(player_turn):
-                            return 'game over'
-                        print('going')
                         dict_field[list(dict_changes.keys())[0]] = '.'
                         dict_field[list(dict_changes.keys())[1]] = dict_changes[list(dict_changes.keys())[1]]
                         if check(player_turn):
-                            if mate(player_turn):
-                                return 'game over'
                             dict_field[list(dict_changes.keys())[0]] = dict_changes[list(dict_changes.keys())[1]]
                             dict_field[list(dict_changes.keys())[1]] = '.'
                             print('move is not valid, its check_mate!')
                             print(print_board())
-                            move = (input('ход первого игрокаa: ') if player_turn % 2 == 0 else input(
+                            move = (input('ход первого игрока: ') if player_turn % 2 == 0 else input(
                                 'ход второго игрока: '))
                             dict_changes.clear()
                             valid_move(move, player_turn)
                         else:
                             break
+            list_of_moves.append(move)
         else:
             print('move is not valid, try again!')
             player_turn -= 1
+        turns += 1
         player_turn += 1
+        print(dict_changes)
         dict_changes.clear()
         print(print_board())
+        print(f'|{turns // 2}__Pаунд__{turns // 2}|')
 
 
 print(game(player_turn, dict_changes))
