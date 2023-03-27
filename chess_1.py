@@ -6,7 +6,6 @@ dict_field = {'a8': 'r', 'b8': 'n', 'c8': 'b', 'd8': 'q', 'e8': 'k', 'f8': 'b', 
               'a3': '.', 'b3': '.', 'c3': '.', 'd3': '.', 'e3': '.', 'f3': '.', 'g3': '.', 'h3': '.',
               'a2': 'P', 'b2': 'P', 'c2': 'P', 'd2': 'P', 'e2': 'P', 'f2': 'P', 'g2': 'P', 'h2': 'P',
               'a1': 'R', 'b1': 'N', 'c1': 'B', 'd1': 'Q', 'e1': 'K', 'f1': 'B', 'g1': 'N', 'h1': 'R'}
-
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'boo']
 dict_changes = {}
 dict_figures = []
@@ -390,13 +389,14 @@ def valid_move(move, player_turn=0, test=0):
                         return True
     if move == '0-0':
         if dict_field['e1' if player_turn % 2 == 0 else 'e8'] == ('K' if player_turn % 2 == 0 else 'k') and \
-           dict_field['h1' if player_turn % 2 == 0 else 'h8'] == ('R' if player_turn % 2 == 0 else 'R') and \
+           dict_field['h1' if player_turn % 2 == 0 else 'h8'] == ('R' if player_turn % 2 == 0 else 'r') and \
            dict_field['f1' if player_turn % 2 == 0 else 'f8'] == '.' and dict_field['g1' if player_turn % 2 == 0 else 'g8'] == '.':
             if test == 0:
                 dict_changes['f1' if player_turn % 2 == 0 else 'f8'] = ('R' if player_turn % 2 == 0 else 'r')
                 dict_changes['g1' if player_turn % 2 == 0 else 'g8'] = ('K' if player_turn % 2 == 0 else 'k')
                 dict_changes['e1' if player_turn % 2 == 0 else 'e8'] = '.'
                 dict_changes['h1' if player_turn % 2 == 0 else 'h8'] = '.'
+                print(dict_changes)
                 return True
             else:
                 return True
@@ -443,7 +443,6 @@ def game(player_turn, dict_changes):
             while True:
                 if start == 'd':
                     while start == 'd':
-                        print(counter)
                         valid_move(list_of_moves[counter][0], another_player_turn)
                         dict_field[list_of_moves[counter][1][0]] = list_of_moves[counter][1][1]
                         dict_field[list_of_moves[counter][2][0]] = list_of_moves[counter][2][1]
@@ -453,10 +452,13 @@ def game(player_turn, dict_changes):
                         start = input()
                 if start == 'a':
                     counter -= 1
-                    print(counter)
                     while start == 'a':
-                        dict_field[list_of_moves[counter][1][0]] = list_of_moves[counter][2][1]
-                        dict_field[list_of_moves[counter][2][0]] = list_of_moves[counter][1][1]
+                        if 'x' in list_of_moves[counter][0]:
+                            dict_field[list_of_moves[counter][1][0]] = list_of_moves[counter][-1]
+                            dict_field[list_of_moves[counter][2][0]] = list_of_moves[counter][1][1]
+                        else:
+                            dict_field[list_of_moves[counter][1][0]] = list_of_moves[counter][2][1]
+                            dict_field[list_of_moves[counter][2][0]] = list_of_moves[counter][1][1]
                         print(print_board())
                         start = input()
                         if start == 'a':
@@ -464,12 +466,6 @@ def game(player_turn, dict_changes):
                             player_turn -= 1
                 if start == '':
                     game(another_player_turn, dict_changes)
-
-
-
-
-
-
         if move == 'save game':
             file = input('file name - ')
             f = open(file, 'w')
@@ -488,25 +484,66 @@ def game(player_turn, dict_changes):
             for move_el in lines:
                 changes.append([move_el])
                 valid_move(move_el, another_player_turn)
-                dict_field[list(dict_changes)[0]] = list(dict_changes.values())[0]
-                dict_field[list(dict_changes)[1]] = list(dict_changes.values())[1]
-                aq.append({list(dict_changes)[0]: list(dict_changes.items())[1][1]})
-                aq.append({list(dict_changes)[1]: list(dict_changes.items())[0][1]})
-                print(aq)
-                changes[-1].append(list(dict_changes.items())[-1])
-                changes[-1].append(list(dict_changes.items())[-2])
-                print(changes)
+                if move_el == '0-0' or move_el == '0-0-0':
+                    dict_field[list(dict_changes)[0]] = list(dict_changes.values())[0]
+                    dict_field[list(dict_changes)[1]] = list(dict_changes.values())[1]
+                    dict_field[list(dict_changes)[2]] = list(dict_changes.values())[2]
+                    dict_field[list(dict_changes)[3]] = list(dict_changes.values())[3]
+                    aq.append({list(dict_changes)[0]: list(dict_changes.items())[2][1]})
+                    aq.append({list(dict_changes)[1]: list(dict_changes.items())[3][1]})
+                    aq.append({list(dict_changes)[2]: list(dict_changes.items())[1][1]})
+                    aq.append({list(dict_changes)[3]: list(dict_changes.items())[0][1]})
+                    changes[-1].append(list(dict_changes.items())[-1])
+                    changes[-1].append(list(dict_changes.items())[-2])
+                    changes[-1].append(list(dict_changes.items())[-3])
+                    changes[-1].append(list(dict_changes.items())[-4])
+                else:
+                    rem = dict_field[move_el[-2:]]
+                    dict_field[list(dict_changes)[0]] = list(dict_changes.values())[0]
+                    dict_field[list(dict_changes)[1]] = list(dict_changes.values())[1]
+                    aq.append({list(dict_changes)[0]: list(dict_changes.items())[1][1]})
+                    aq.append({list(dict_changes)[1]: list(dict_changes.items())[0][1]})
+                    changes[-1].append(list(dict_changes.items())[-1])
+                    changes[-1].append(list(dict_changes.items())[-2])
+                    if 'x' in move_el:
+                        changes[-1].append(rem)
                 another_player_turn += 1
-            for num in range(len(aq)):
-                dict_field[list(aq[num].items())[0][0]] = list(aq[num].items())[0][1]
+            for key in dict_field.keys():
+                if key[1] in '3456':
+                    dict_field[key] = '.'
+                if key[1] == '7':
+                    dict_field[key] = 'p'
+                if key[1] == '2':
+                    dict_field[key] = 'P'
+                dict_field['a1'] = 'R'
+                dict_field['b1'] = 'N'
+                dict_field['c1'] = 'B'
+                dict_field['d1'] = 'Q'
+                dict_field['e1'] = 'K'
+                dict_field['f1'] = 'B'
+                dict_field['g1'] = 'N'
+                dict_field['h1'] = 'R'
+                dict_field['a8'] = 'r'
+                dict_field['b8'] = 'n'
+                dict_field['c8'] = 'b'
+                dict_field['d8'] = 'q'
+                dict_field['e8'] = 'k'
+                dict_field['f8'] = 'b'
+                dict_field['g8'] = 'n'
+                dict_field['h8'] = 'r'
             another_player_turn = 0
             counter = 0
             while True:
                 if start == 'd':
                     while start == 'd':
-                        valid_move(changes[counter][0], another_player_turn)
-                        dict_field[changes[counter][1][0]] = changes[counter][1][1]
-                        dict_field[changes[counter][2][0]] = changes[counter][2][1]
+                        if changes[counter][0] == '0-0' or changes[counter][0] == '0-0-0':
+                            dict_field[changes[counter][1][0]] = '.'
+                            dict_field[changes[counter][2][0]] = '.'
+                            dict_field[changes[counter][3][0]] = changes[counter][3][1]
+                            dict_field[changes[counter][4][0]] = changes[counter][4][1]
+                        else:
+                            dict_field[changes[counter][1][0]] = changes[counter][1][1]
+                            dict_field[changes[counter][2][0]] = changes[counter][2][1]
                         counter += 1
                         another_player_turn += 1
                         print(print_board())
@@ -514,8 +551,18 @@ def game(player_turn, dict_changes):
                 if start == 'a':
                     counter -= 1
                     while start == 'a':
-                        dict_field[changes[counter][1][0]] = changes[counter][2][1]
-                        dict_field[changes[counter][2][0]] = changes[counter][1][1]
+                        if changes[counter][0] == '0-0' or changes[counter][0] == '0-0-0':
+                            dict_field[changes[counter][1][0]] = changes[counter][3][1]
+                            dict_field[changes[counter][2][0]] = changes[counter][4][1]
+                            dict_field[changes[counter][3][0]] = '.'
+                            dict_field[changes[counter][4][0]] = '.'
+                        else:
+                            if 'x' in changes[counter][0]:
+                                dict_field[changes[counter][1][0]] = changes[counter][-1]
+                                dict_field[changes[counter][2][0]] = changes[counter][1][1]
+                            else:
+                                dict_field[changes[counter][1][0]] = changes[counter][2][1]
+                                dict_field[changes[counter][2][0]] = changes[counter][1][1]
                         counter -= 1
                         player_turn -= 1
                         print(print_board())
@@ -523,6 +570,7 @@ def game(player_turn, dict_changes):
                 if start == '':
                     game(another_player_turn, dict_changes)
         if valid_move(move, player_turn):
+            rem = dict_field[move[-2:]]
             if move == '0-0' or move == '0-0-0':
                 dict_field[list(dict_changes.keys())[0]] = dict_changes[list(dict_changes.keys())[0]]
                 dict_field[list(dict_changes.keys())[1]] = dict_changes[list(dict_changes.keys())[1]]
@@ -568,13 +616,14 @@ def game(player_turn, dict_changes):
                 qwe.append({list(dict_changes)[1]: list(dict_changes.items())[0][1]})
                 list_of_moves[-1].append(list(dict_changes.items())[-1])
                 list_of_moves[-1].append(list(dict_changes.items())[-2])
+                if 'x' in move:
+                    list_of_moves[-1].append(rem)
+                    print(rem, list_of_moves)
         else:
             print('move is not valid, try again!')
             player_turn -= 1
-        print(qwe)
         turns += 1
         player_turn += 1
-        print(list_of_moves)
         dict_changes.clear()
         print(print_board())
         print(f'|{turns // 2}__Pаунд__{turns // 2}|')
