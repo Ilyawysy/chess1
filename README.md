@@ -33,5 +33,5 @@
 ---
 ### 📩 Контакты и Обратная связь
 ✉️ Если у вас есть вопросы или предложения, свяжитесь с нами через Telegram / Email.    
-[`📩 alaska@wyys.ru`]
+`📩 alaska@wyys.ru`
 [`✈️ iwysy`](https://t.me/iwysy)
