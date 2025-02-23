@@ -1,4 +1,8 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&repeat=false&width=500&lines=%F0%9F%9A%80+Kryptonite+ML+Challenge+-+%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0+MMG;++++%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0+MMG)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&repeat=false&width=500&lines=%F0%9F%9A%80+Kryptonite+ML+Challenge+-+%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0+MMG)](https://git.io/typing-svg)
+
+
+![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
+
 
 ## 🔥 Описание задачи
 Поддельные изображения и видео, созданные с помощью технологии **DeepFake**, представляют угрозу для цифровой безопасности. Они могут быть настолько реалистичными, что их сложно отличить от настоящих.
