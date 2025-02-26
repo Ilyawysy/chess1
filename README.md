@@ -1,19 +1,6 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&repeat=false&width=500&lines=%F0%9F%9A%80+Kryptonite+ML+Challenge+-+%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0+MMG)](https://git.io/typing-svg)
 
 
-
-<!-- INSERT-PRIMITIVES-TABLE:START -->
-|Name|Role|GitHub|
-|----|----|----|
-|Маликов Денис|Капитан, Data Analyst|[GitHub](https://github.com/medwejonok)|
-|Артем Таратин|Data Scientist|[GitHub](https://github.com/kekwak)|
-|Даниил Аль-Натор|Ml Engineer|[GitHub](https://github.com/alexsmirnov)|
-|Обухов Илья|Data Analyst|[GitHub](https://github.com/Ilyawysy)|
-
-
-
-
-
 ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
 ![nVIDIA](https://img.shields.io/badge/cuda-000000.svg?style=for-the-badge&logo=nVIDIA&logoColor=green)
 ![OpenCV](https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&logo=opencv&logoColor=white)
@@ -22,7 +9,7 @@
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
-	![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
 
 ## 🔥 Описание задачи
@@ -38,10 +25,12 @@
 🌐 **Лендинг:** [kryptonite-ml.ru](https://kryptonite-ml.ru)
 
 ## 🏆 Состав команды MMG
-- **Денис Маликов** – Капитан, DA  
-- **Артём Таратин** – DS  
-- **Даниил Аль-Натор** – DS  
-- **Илья Обухов** – DE  
+|Name|Role|GitHub|
+|----|----|----|
+|Маликов Денис|Капитан, Data Analyst|[GitHub](https://github.com/medwejonok)|
+|Артем Таратин|Data Scientist|[GitHub](https://github.com/kekwak)|
+|Даниил Аль-Натор|Ml Engineer|[GitHub](https://github.com/alexsmirnov)|
+|Обухов Илья|Data Analyst|[GitHub](https://github.com/Ilyawysy)|
 
 ---
 ### 📩 Контакты и Обратная связь
