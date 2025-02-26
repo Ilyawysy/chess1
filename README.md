@@ -3,10 +3,17 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&repeat=false&width=500&lines=%F0%9F%9A%80+Kryptonite+ML+Challenge+-+%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0+MMG)](https://git.io/typing-svg)
 
 ## Авторы  
-
-[![Иван Иванов](https://github.com/ivanivanov.png?size=100)](https://github.com/ivanivanov)  
-[![Мария Петрова](https://github.com/mariapetrova.png?size=100)](https://github.com/mariapetrova)  
-[![Алексей Смирнов](https://github.com/alexsmirnov.png?size=100)](https://github.com/alexsmirnov)  
+<p align="center">
+  <a href="https://github.com/ivanivanov">
+    <img src="https://github.com/ivanivanov.png" width="100" style="border-radius: 50%;" alt="Иван Иванов">
+  </a>
+  <a href="https://github.com/mariapetrova">
+    <img src="https://github.com/mariapetrova.png" width="100" style="border-radius: 50%;" alt="Мария Петрова">
+  </a>
+  <a href="https://github.com/alexsmirnov">
+    <img src="https://github.com/alexsmirnov.png" width="100" style="border-radius: 50%;" alt="Алексей Смирнов">
+  </a>
+</p>
 
 ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
 ![nVIDIA](https://img.shields.io/badge/cuda-000000.svg?style=for-the-badge&logo=nVIDIA&logoColor=green)
