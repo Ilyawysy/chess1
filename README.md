@@ -15,6 +15,9 @@
   </a>
 </p>
 
+<a href="https://github.com/refinedev/refine/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=refinedev/refine&max=400&columns=20" />
+</a>
 
 
 ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
