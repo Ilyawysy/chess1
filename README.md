@@ -63,4 +63,4 @@
 
 
 ## Лицензия  
-Этот проект распространяется по [лицензии MIT](https://opensource.org/licenses/MIT). Подробнее см. [LICENSE](LICENSE).
+Этот проект распространяется по [лицензии MIT](https://opensource.org/licenses/MIT).
