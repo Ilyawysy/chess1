@@ -11,6 +11,12 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
+## Оглавление
+- [Описание задачи](#описание-задачи)
+- Цели проекта](#Цели-проекта)
+- [Ссылки](#ссылки)
+- [Авторы](#авторы)
+
 
 ## 🔥 Описание задачи
 Поддельные изображения и видео, созданные с помощью технологии **DeepFake**, представляют угрозу для цифровой безопасности. Они могут быть настолько реалистичными, что их сложно отличить от настоящих.
@@ -29,7 +35,7 @@
 |----|----|----|
 |Маликов Денис|Капитан, Data Analyst|[GitHub](https://github.com/medwejonok)|
 |Артем Таратин|Data Scientist|[GitHub](https://github.com/kekwak)|
-|Даниил Аль-Натор|Ml Engineer|[GitHub](https://github.com/alexsmirnov)|
+|Даниил Аль-Натор|Ml Engineer|[GitHub](https://github.com/Al-Nator)|
 |Обухов Илья|Data Analyst|[GitHub](https://github.com/Ilyawysy)|
 
 ---
