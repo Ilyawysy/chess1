@@ -5,10 +5,10 @@
 <!-- INSERT-PRIMITIVES-TABLE:START -->
 |Name|Role|GitHub|
 |----|----|----|
-|Маликов Денис|Капитан, Data Analyst|[GitHub](https://github.com/medvejonok)|
+|Маликов Денис|Капитан, Data Analyst|[GitHub](https://github.com/medwejonok)|
 |Артем Таратин|Data Scientist|[GitHub](https://github.com/kekwak)|
 |Даниил Аль-Натор|Ml Engineer|[GitHub](https://github.com/alexsmirnov)|
-|Обухов Илья||[GitHub](https://github.com/Ilyawysy)|
+|Обухов Илья|Data Analyst|[GitHub](https://github.com/Ilyawysy)|
 
 
 
