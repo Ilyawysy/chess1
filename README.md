@@ -5,15 +5,16 @@
 ## Авторы  
 <p align="center">
   <a href="https://github.com/ivanivanov">
-    <img src="https://github.com/ivanivanov.png" width="100">
+    <img src="https://img.shields.io/badge/-Иван%20Иванов-gray?style=for-the-badge&logo=github&logoColor=white&labelColor=black">
   </a>
   <a href="https://github.com/mariapetrova">
-    <img src="https://github.com/mariapetrova.png" width="100">
+    <img src="https://img.shields.io/badge/-Мария%20Петрова-gray?style=for-the-badge&logo=github&logoColor=white&labelColor=black">
   </a>
   <a href="https://github.com/alexsmirnov">
-    <img src="https://github.com/alexsmirnov.png" width="100">
+    <img src="https://img.shields.io/badge/-Алексей%20Смирнов-gray?style=for-the-badge&logo=github&logoColor=white&labelColor=black">
   </a>
 </p>
+
 
 
 ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
