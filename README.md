@@ -4,9 +4,10 @@
 
 <!-- INSERT-PRIMITIVES-TABLE:START -->
 |Name|Role|GitHub|
-|----|----|----|----|----|
+|----|----|----|
 |<h4>*Inputs*</h4>|
-|[active-element](https://github.com/solidjs-community/solid-primitives/tree/main/packages/active-element#readme)|[![NAME]wudn](https://github.com/solidjs-community/solid-primitives/blob/main/CONTRIBUTING.md#contribution-process)|[createActiveElement](https://github.com/solidjs-community/solid-primitives/tree/main/packages/active-element#createactiveelement)<br />[createFocusSignal](https://github.com/solidjs-community/solid-primitives/tree/main/packages/active-element#createfocussignal)|
+|[active-element](https://github.com/solidjs-community/solid-primitives/tree/main/packages/active-element#readme)|[createActiveElement](https://github.com/solidjs-community/solid-primitives/tree/main/packages/active-element#createactiveelement)<br />[createFocusSignal](https://github.com/solidjs-community/solid-primitives/tree/main/packages/active-element#createfocussignal)|[GitHub](https://github.com/solidjs-community/solid-primitives/tree/main/packages/active-element#readme)|
+
 
 
 
