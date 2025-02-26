@@ -5,11 +5,10 @@
 <!-- INSERT-PRIMITIVES-TABLE:START -->
 |Name|Role|GitHub|
 |----|----|----|
-|Иван Иванов|Разработчик Backend|[GitHub](https://github.com/ivanivanov)|
-|Мария Петрова|Data Scientist|[GitHub](https://github.com/mariapetrova)|
-|Алексей Смирнов|Frontend Developer|[GitHub](https://github.com/alexsmirnov)|
-|Екатерина Сидорова|ML Engineer|[GitHub](https://github.com/ekaterinasidorova)|
-|Дмитрий Кузнецов|DevOps|[GitHub](https://github.com/dmitrykuznetsov)|
+|Маликов Денис|Капитан, Data Analyst|[GitHub](https://github.com/medvejonok)|
+|Артем Таратин|Data Scientist|[GitHub](https://github.com/kekwak)|
+|Даниил Аль-Натор|Ml Engineer|[GitHub](https://github.com/alexsmirnov)|
+|Обухов Илья||[GitHub](https://github.com/Ilyawysy)|
 
 
 
