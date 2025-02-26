@@ -5,8 +5,12 @@
 <!-- INSERT-PRIMITIVES-TABLE:START -->
 |Name|Role|GitHub|
 |----|----|----|
-|<h4>*Inputs*</h4>|
-|[active-element](https://github.com/solidjs-community/solid-primitives/tree/main/packages/active-element#readme)|[createActiveElement](https://github.com/solidjs-community/solid-primitives/tree/main/packages/active-element#createactiveelement)<br />[createFocusSignal](https://github.com/solidjs-community/solid-primitives/tree/main/packages/active-element#createfocussignal)|[GitHub](https://github.com/solidjs-community/solid-primitives/tree/main/packages/active-element#readme)|
+|Иван Иванов|Разработчик Backend|[GitHub](https://github.com/ivanivanov)|
+|Мария Петрова|Data Scientist|[GitHub](https://github.com/mariapetrova)|
+|Алексей Смирнов|Frontend Developer|[GitHub](https://github.com/alexsmirnov)|
+|Екатерина Сидорова|ML Engineer|[GitHub](https://github.com/ekaterinasidorova)|
+|Дмитрий Кузнецов|DevOps|[GitHub](https://github.com/dmitrykuznetsov)|
+
 
 
 
