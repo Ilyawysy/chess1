@@ -1,6 +1,15 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&repeat=false&width=500&lines=%F0%9F%9A%80+Kryptonite+ML+Challenge+-+%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0+MMG)](https://git.io/typing-svg)
 
 
+
+<!-- INSERT-PRIMITIVES-TABLE:START -->
+|Name|Stage|Primitives|Size|NPM|
+|----|----|----|----|----|
+|<h4>*Inputs*</h4>|
+|[active-element](https://github.com/solidjs-community/solid-primitives/tree/main/packages/active-element#readme)|[![STAGE](https://img.shields.io/endpoint?style=for-the-badge&label=&url=https%3A%2F%2Fraw.githubusercontent.com%2Fsolidjs-community%2Fsolid-primitives%2Fmain%2Fassets%2Fbadges%2Fstage-3.json)](https://github.com/solidjs-community/solid-primitives/blob/main/CONTRIBUTING.md#contribution-process)|[createActiveElement](https://github.com/solidjs-community/solid-primitives/tree/main/packages/active-element#createactiveelement)<br />[createFocusSignal](https://github.com/solidjs-community/solid-primitives/tree/main/packages/active-element#createfocussignal)|[![SIZE](https://img.shields.io/bundlephobia/minzip/@solid-primitives/active-element?style=for-the-badge&label=)](https://bundlephobia.com/package/@solid-primitives/active-element)|[![VERSION](https://img.shields.io/npm/v/@solid-primitives/active-element?style=for-the-badge&label=)](https://www.npmjs.com/package/@solid-primitives/active-element)|
+
+
+
 ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
 ![nVIDIA](https://img.shields.io/badge/cuda-000000.svg?style=for-the-badge&logo=nVIDIA&logoColor=green)
 ![OpenCV](https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&logo=opencv&logoColor=white)
