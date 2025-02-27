@@ -50,16 +50,19 @@
 ## 🏆 Состав команды MMG
 |Name|Role|GitHub|
 |----|----|----|
-|Маликов Денис|Капитан, Data Analyst|[GitHub](https://github.com/medwejonok)|
-|Артем Таратин|Data Scientist|[GitHub](https://github.com/kekwak)|
-|Даниил Аль-Натор|Ml Engineer|[GitHub](https://github.com/Al-Nator)|
+|Маликов Денис|ML Engineer NLP|[GitHub](https://github.com/medwejonok)|
+|Артем Таратин|Капитан|[GitHub](https://github.com/kekwak)|
+|Даниил Аль-Натор|Data Science|[GitHub](https://github.com/Al-Nator)|
 |Обухов Илья|Data Analyst|[GitHub](https://github.com/Ilyawysy)|
 
 ---
 ### 📩 Контакты и Обратная связь
-Если у вас есть вопросы или предложения, свяжитесь с нами через Telegram / Email.    
+Если у вас есть вопросы или предложения, свяжитесь с нами через Telegram.    
 `📩 alaska@wyys.ru`
 [`✈️ iwysy`](https://t.me/iwysy)
+[`✈️ med_wejonok`](https://t.me/med_wejonok)
+[`✈️ Based_Danya`](https://t.me/Based_Danya)
+[`✈️ kekwak`](https://t.me/kekwak)
 
 
 ## Лицензия  
